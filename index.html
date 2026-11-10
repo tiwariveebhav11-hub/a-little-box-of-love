@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2b0b1c">
+  <meta name="description" content="Five little notes, one endless love. A private anniversary surprise for Vaishnavi.">
+  <title>A Little Box of Love ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600;700&family=Parisienne&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"><span>♡</span><span>✧</span><span>♡</span><span>✦</span><span>♡</span><span>✧</span></div>
+  <main id="app">
+    <section class="screen welcome active" id="welcome">
+      <div class="fairy-lights" aria-hidden="true">✦　·　✧　·　✦　·　✧　·　✦</div>
+      <div class="intro-photo photo-frame" data-photo="welcome"></div>
+      <p class="eyebrow">A keepsake made with love</p>
+      <h1>Welcome to<br><em>My Little World</em> 🤍</h1>
+      <p class="subtitle">Happy 2 Months, Meri Princess!</p>
+      <p class="welcome-copy">A little world made of our pictures, your favourite songs, and all the words my heart wants you to hear. Open each envelope slowly, my love.</p>
+      <div class="hero-envelope" aria-hidden="true"><div class="env-back"></div><div class="env-letter">A little box<br>of love</div><div class="env-flap"></div><div class="wax">♡</div></div>
+      <button class="primary-btn" id="beginBtn">TAP TO BEGIN ✨</button>
+      <p class="tiny-note">Made just for you, Vaishnavi ♡</p>
+    </section>
+
+    <section class="screen letter-screen" id="personalLetter">
+      <div class="topline"><span>A LITTLE BOX OF LOVE</span><span>♡</span></div>
+      <article class="paper personal-paper">
+        <div class="paper-corner">❀</div>
+        <div class="letter-photo photo-frame" id="personalPhoto" aria-label="A photo from Dudu"></div>
+        <p class="eyebrow">A letter from my heart</p>
+        <h2>My Dearest Vaishnavi, ❤️</h2>
+        <div id="personalLetterText" class="letter-body">
+          <p class="placeholder-copy">Your separate “Happy 2 Months, Meri Princess” anniversary letter belongs here. Add the approved letter text in <code>js/personal-letter.js</code> when you provide the final copy. No new memories or story have been invented.</p>
+        </div>
+        <div class="signature">With all my love,<br>Your Dudu. 🤍</div>
+      </article>
+      <button class="primary-btn" id="toNotesBtn">OPEN THE FIVE LITTLE NOTES ♡</button>
+    </section>
+
+    <section class="screen notes-screen" id="notesScreen">
+      <header class="notes-header">
+        <p class="eyebrow">A little something, just for you</p>
+        <h2>Five Little Notes,<br><em>One Endless Love</em></h2>
+        <div class="progress-wrap"><div class="progress-track"><div id="progressFill"></div></div><span id="progressLabel">Note 1 of 5</span></div>
+      </header>
+      <nav class="note-tabs" id="noteTabs" aria-label="Love notes"></nav>
+      <article class="note-card" id="noteCard">
+        <div class="note-envelope" id="noteEnvelope">
+          <div class="envelope-top"></div><div class="envelope-front"></div><div class="envelope-letter-preview">A little note<br>for my princess</div><div class="envelope-seal">♡</div>
+        </div>
+        <p class="tap-hint" id="tapHint">♡ Tap the little envelope to open your surprise ♡</p>
+        <div class="note-content" id="noteContent" hidden>
+          <div class="note-photo-pair" id="notePhotoPair"><div class="note-photo photo-frame" id="notePhoto"></div><span class="photo-heart" aria-hidden="true">♡</span><div class="note-photo photo-frame" id="notePhotoSecond"></div></div>
+          <p class="eyebrow" id="noteNumber">NOTE 1</p>
+          <h3 id="noteTitle"></h3>
+          <div class="song-player">
+            <div class="music-icon">♫</div>
+            <div class="song-info"><strong id="songTitle"></strong><span> A song for this little note</span></div>
+            <button id="playBtn" class="music-btn" aria-label="Play song">▶</button>
+            <label class="volume-control" aria-label="Volume">♪ <input id="volume" type="range" min="0" max="1" step="0.05" value="0.7"></label>
+          </div>
+          <p id="audioStatus" class="audio-status" aria-live="polite">Tap the envelope to open your note and play its song.</p>
+          <div id="noteBody" class="letter-body"></div>
+          <div class="signature">Your Dudu. 🤍</div>
+          <div class="note-actions"><button class="secondary-btn" id="prevBtn">← Previous</button><button class="primary-btn" id="nextBtn">Unlock Next Surprise ♡</button></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="screen ending-screen" id="ending">
+      <div class="ending-sparkle">✧　♡　✦　♡　✧</div>
+      <div class="ending-photo photo-frame" data-photo="couple"></div>
+      <p class="eyebrow">And there's so much more ahead</p>
+      <h1>This Is Only<br><em>The Beginning...</em> ❤️</h1>
+      <blockquote>“We haven't held hands yet, but somehow you've held a very special place in my heart.”</blockquote>
+      <p class="closing">I love you endlessly, my princess.</p>
+      <div class="signature ending-signature">Forever yours,<br>Your Dudu. 🤍</div>
+      <button class="primary-btn" id="replayBtn">↻ Replay Our Little Story</button>
+      <p class="tiny-note">Five little notes. A million more reasons to love you. ♡</p>
+    </section>
+  </main>
+  <video id="songPlayer" class="audio-video" playsinline preload="none"></video>
+  <script src="js/notes.js"></script>
+  <script src="js/personal-letter.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
