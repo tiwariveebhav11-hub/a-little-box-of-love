@@ -4,7 +4,7 @@
   let current = 0, unlocked = 0, opened = false;
   const player = $("songPlayer");
   const tabs = $("noteTabs");
-  const trackFiles = [1,2,3,4,5].map(n => `assets/songs/song-${n}.mp4`);
+  const trackFiles = [1,2,3,4,5].map(n => `song-${n}.mp4`);
   const notePhotos = [
     ["vaishnavi-01.jpg", "dudu-01.jpg"],
     ["vaishnavi-02.jpg", "dudu-02.png"],
@@ -56,7 +56,7 @@
     const img = new Image();
     img.onload = () => { container.innerHTML=""; container.appendChild(img); };
     img.onerror = () => {};
-    img.src = `assets/photos/${file}`;
+    img.src = file;
   }
   function openNote() {
     if(opened) return;
@@ -99,7 +99,7 @@
   player.addEventListener("ended", () => $("playBtn").textContent="▶");
   player.addEventListener("error", () => {
     $("playBtn").textContent="▶";
-    $("audioStatus").textContent="Song file not found or unsupported. Add the verified MP4 for this note in assets/songs; you can continue reading.";
+    $("audioStatus").textContent="Song file not found or unsupported. Make sure song files are uploaded in the repository root; you can continue reading.";
     $("audioStatus").classList.add("error");
   });
   $("prevBtn").addEventListener("click", () => { if(current>0) loadNote(current-1,true); });
